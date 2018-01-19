@@ -31,6 +31,15 @@ namespace api
 
             services.AddTransient<IStudentService, StudentService>();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin", builder =>
+                    builder.AllowAnyHeader()
+                           .AllowAnyMethod()
+                           .AllowAnyOrigin()
+                );
+            });
+
             services.AddMvc();
         }
 
@@ -41,6 +50,8 @@ namespace api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseMvc();
         }
