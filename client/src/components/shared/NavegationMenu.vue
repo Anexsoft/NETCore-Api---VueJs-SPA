@@ -27,6 +27,14 @@ export default {
     items: [
       { icon: "dashboard", text: "Dashboard", path: "/" },
       {
+        icon: "user",
+        text: "Estudiantes",
+        children: [
+          { icon: "plus", text: "Agregar", path: "/students/add" },
+          { icon: "list", text: "Listar", path: "/students" },
+        ]
+      },
+      {
         icon: "star",
         text: "Ejemplo",
         children: [{ icon: "list", text: "Listar", path: "/example" }]

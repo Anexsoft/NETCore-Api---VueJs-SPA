@@ -50,7 +50,7 @@ namespace api.Controllers
         public IActionResult Put([FromBody] Student model)
         {
             return Ok(
-                _studentService.Add(model)
+                _studentService.Update(model)
             );
         }
 
